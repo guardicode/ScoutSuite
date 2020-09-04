@@ -113,10 +113,11 @@ async def _run(provider,
                                                  programmatic_execution=programmatic_execution)
 
         if not credentials:
-            return 101
+            # TODO figure out how to display these kinds of errors on island
+            return {'error': "Credentials failed"}
     except Exception as e:
         print_exception('Authentication failure: {}'.format(e))
-        return 101
+        return {'error': f"Exception {e}"}
 
     # Create a cloud provider object
     cloud_provider = get_provider(provider=provider,
