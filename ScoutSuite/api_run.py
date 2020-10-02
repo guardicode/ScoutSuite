@@ -108,7 +108,6 @@ async def _run(provider,
                                                  programmatic_execution=programmatic_execution)
 
         if not credentials:
-            # TODO figure out how to display these kinds of errors on island
             return {'error': "Credentials failed"}
     except Exception as e:
         print_exception('Authentication failure: {}'.format(e))
@@ -191,12 +190,8 @@ async def _run(provider,
         try:
             exceptions = RuleExceptions(exceptions)
             exceptions.process(cloud_provider)
-            exceptions = exceptions.exceptions
         except Exception as e:
             print_exception('Failed to load exceptions: {}'.format(e))
-            exceptions = {}
-    else:
-        exceptions = {}
 
     run_parameters = {
         'services': services,
