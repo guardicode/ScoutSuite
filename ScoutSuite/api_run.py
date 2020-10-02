@@ -1,20 +1,15 @@
 import asyncio
 import copy
-import os
-import webbrowser
-
-from asyncio_throttle import Throttler
-from ScoutSuite import ERRORS_LIST
-
 from concurrent.futures import ThreadPoolExecutor
 
-from ScoutSuite.core.console import set_logger_configuration, print_info, print_exception
+from ScoutSuite.core.console import print_exception
 from ScoutSuite.core.exceptions import RuleExceptions
 from ScoutSuite.core.processingengine import ProcessingEngine
 from ScoutSuite.core.ruleset import Ruleset
 from ScoutSuite.output.html import ScoutReport
 from ScoutSuite.providers import get_provider
 from ScoutSuite.providers.base.authentication_strategy_factory import get_authentication_strategy
+from asyncio_throttle import Throttler
 
 
 def run(provider,
