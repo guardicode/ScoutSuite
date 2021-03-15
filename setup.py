@@ -2,6 +2,7 @@
 
 # distutils/setuptools install script for Scout Suite
 import os
+
 from setuptools import setup, find_packages
 
 # Package info
@@ -27,7 +28,11 @@ setup(
     entry_points={
         'console_scripts': [
             'scout = ScoutSuite.__main__:run_from_cli',
-        ]
+        ],
+        'pyinstaller40': [
+            'hook-dirs = ScoutSuite.__pyinstaller:get_hook_dirs',
+            'tests = ScoutSuite.__pyinstaller:get_PyInstaller_tests',
+        ],
     },
     packages=find_packages(),
     package_data={
