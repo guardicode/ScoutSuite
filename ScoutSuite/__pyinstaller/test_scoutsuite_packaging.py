@@ -29,7 +29,6 @@ def test_pyinstaller_scoutsuite(tmp_path):
         '--workpath', str(workpath),
         '--distpath', str(distpath),
         '--specpath', str(tmp_path),
-        '--additional-hooks-dir', 'C:\\Users\\Vakaris\\Desktop\\ScoutSuite\\ScoutSuite\\__pyinstaller'
         '--clean',
         str(app),
     ]
