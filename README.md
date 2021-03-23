@@ -19,5 +19,8 @@ Run the tests; see also notes on this:
 
 `python -m PyInstaller.utils.run_tests --include_only ScoutSuite.`
 
-If test fails, try building manually: `>pyinstaller --clean -F ./__pyinstaller/packet_test/packaging_test.py`.
-Then run `./__pyinstaller/packet_test/dist/packaging_test.exe` to see if it works
+If test fails, try building manually: 
+
+1. Open shell in `ScoutSuite/__pyinstaller/packet_test`
+2. `pyinstaller --clean -F ./packaging_test.py`
+3. `.\dist\packaging_test.exe m0nk3y -s localhost:5000` to see if it works
